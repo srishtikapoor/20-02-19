@@ -1,0 +1,56 @@
+<script>
+
+//array that consists of 5 objects
+var obj=[           
+    {
+    type:"A",
+    Percentage:'10'
+
+    },
+    {
+        type:"B",
+        Percentage:'20'
+    },
+
+    {
+        type:"C",
+        Percentage:"30"
+
+    },
+
+    {
+        type:"D",
+        Percentage:"40"
+    },
+
+    {
+        type:"E",
+        Percentage:"50"
+    },
+
+]
+
+//function to calculate net amount and deduced amount 
+function cal(Type,Amount){
+
+    for(var i=0;i<obj.length;i++)
+    {
+        if(obj[i].type==Type)
+        {
+            var per=obj[i].Percentage;
+            var deduced_Amount=(Amount*per)/100;
+            net_Amount=Amount-(deduced_Amount);
+        
+        }
+    }
+
+    var result={"type is" :Type, "Amount is" :Amount, "Percentage deduction is":per, "Amount Deducted is" :deduced_Amount,
+     "Amount after tax deduction is" :net_Amount};
+     return result;
+}
+
+//function called
+
+var ans=cal("B",500);       
+console.log(ans);
+</script>

@@ -1,0 +1,20 @@
+<script>
+function add(arg) {
+
+var add = arg
+
+function f(b) {
+  add += b
+  return f
+}
+
+f.toString = function() { return add }
+
+return f
+}
+
+console.log( add(1)(2) )  ;// 3
+console.log( add(5)(-1)(2) ) ; // 6
+console.log( add(6)(-1)(-2)(-3) ) ; // 0
+console.log( add(0)(1)(2)(3)(4)(5) );  // 15
+</script>
